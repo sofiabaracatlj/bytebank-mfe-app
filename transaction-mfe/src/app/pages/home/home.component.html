@@ -1,0 +1,20 @@
+
+<app-header></app-header>
+<div class="bg-green-100 ">
+    <div>
+        <app-menu-bar ></app-menu-bar>
+    </div>
+    <div class="min-h-screen flex flex-row gap-8 justify-center xl:flex-row p-6 items-center xl:items-start">
+
+        <app-side-bar-menu class="xl:min-h-screen"></app-side-bar-menu>
+        <!-- <app-transactions></app-transactions> -->
+        <div class="flex flex-col gap-8 xl:flex-row">
+
+            <div class="max-w-[38rem] w-full flex flex-col gap-8 lg:justify-start md:justify-center items-center lg:w-[38rem] md:w-[38rem]">
+                <app-balance class="w-full flex justify-center"></app-balance>
+               <app-central-card class="w-full flex justify-center" (onNewTransactionEmitter)="onNewTransaction()"></app-central-card>
+            </div>
+            <app-transaction  *ngIf="account?.transactions" class="max-w-[38rem] w-full flex justify-center"></app-transaction>
+        </div>
+    </div>
+</div>

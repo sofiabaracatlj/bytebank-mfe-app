@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  transaction-mfe:
+    image: transaction-mfe:latest
+    build:
+      context: ./transaction-mfe
+      dockerfile: Dockerfile
+    ports:
+      - "4201:4201" # Corrected port mapping
+    environment:
+      - NODE_ENV=production
+
+  login-mfe:
+    image: login-mfe:latest
+    build:
+      context: ./login-mfe/login-mfe
+      dockerfile: Dockerfile # Explicitly specify the Dockerfile
+    ports:
+      - "4202:4202" # Corrected port mapping
+    environment:
+      - NODE_ENV=production
+
+  bytebank-shell:
+    image: bytebank-shell:latest
+    build:
+      context: ./bytebank-shell
+      dockerfile: Dockerfile # Explicitly specify the Dockerfile
+    ports:
+      - "4200:4200"
+    depends_on:
+      - transaction-mfe
+      - login-mfe
+    environment:
+      - NODE_ENV=production
