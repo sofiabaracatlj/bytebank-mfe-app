@@ -1,0 +1,48 @@
+<div class="flex flex-col p-28 min-h-screen bg-gradient">
+  <div class="flex flex-row space-x-4">
+    <div
+      class="flex-1 p-4 font-sans font-semibold text-2xl leading-none tracking-normal align-middle"
+    >
+      Experimente mais liberdade no controle da sua vida financeira. Crie sua
+      conta com a gente!
+    </div>
+    <div class="flex-1 p-4">
+      <img
+        src="http://localhost:4202/assets/banner.png"
+        alt="banner"
+        class="max-h-96"
+      />
+    </div>
+  </div>
+  <div class="flex flex-col space-y-4 mt-8">
+    <div class="text-center font-sans font-semibold text-lg">
+      Vantagens do nosso banco:
+    </div>
+    <div class="flex flex-row justify-center space-x-4">
+      <app-advantages-card
+        [icon]="faGift"
+        title="Conta e cartão gratuitos"
+        description="Isso mesmo, nossa conta é digital, sem custo fixo e mais que isso: sem tarifa de manutenção."
+      >
+      </app-advantages-card>
+      <app-advantages-card
+        [icon]="faMoneyTransfer"
+        title="Saques sem custo"
+        description="Você pode sacar gratuitamente 4x por mês de qualquer Banco 24h."
+      >
+      </app-advantages-card>
+      <app-advantages-card
+        [icon]="faStar"
+        title="Programa de pontos"
+        description="Você pode acumular pontos com suas compras no crédito sem pagar mensalidade!"
+      >
+      </app-advantages-card>
+      <app-advantages-card
+        [icon]="faMobile"
+        title="Seguro Dispositivos"
+        description="Seus dispositivos móveis (computador e laptop) protegidos por uma mensalidade simbólica."
+      >
+      </app-advantages-card>
+    </div>
+  </div>
+</div>
