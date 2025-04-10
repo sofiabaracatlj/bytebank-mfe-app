@@ -19,9 +19,6 @@ RUN npm run build --prod
 # Verify the build output
 RUN ls -la /usr/src/app/dist/transaction-mfe
 
-# Ensure the directory exists
-RUN test -d /usr/src/app/dist/transaction-mfe || (echo "Build output not found!" && exit 1)
-
 # Stage 2: Serve the application using Nginx
 FROM nginx:alpine
 
